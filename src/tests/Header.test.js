@@ -1,7 +1,8 @@
 import React from 'react';
+import { fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderWithRouter from './renderWithRouter';
-import App from './App';
+import App from '../App';
 
 describe('Testing Header in route /nomade', () => {
 	test('if the smiles-logo redirect to home', () => {
@@ -10,13 +11,12 @@ describe('Testing Header in route /nomade', () => {
 		const nomade = '/nomade';
 		history.push(nomade);
 
-		const imgLogo = getByRole('image', { name: 'smiles-logo' });
+		const imgLogo = getByRole('img', { name: 'smiles-logo' });
 		expect(imgLogo).toBeInTheDocument();
 
-		userEvent.click(imgLogo);
-		const { pathname } = history.location;
+		const linkHome = getByRole('link', { name: 'smiles-logo' });
 		const URLsmilesHome = 'https://www.smiles.com.br/home';
-		expect(pathname).toBe(URLsmilesHome);
+		expect(linkHome.href).toBe(URLsmilesHome);
 	});
 	
 	test('if the link Ajuda redirect to help page', () => {
@@ -28,10 +28,8 @@ describe('Testing Header in route /nomade', () => {
 		const helpText = getByText('Ajuda');
 		expect(helpText).toBeInTheDocument();
 
-		userEvent.click(helpText);
-		const { pathname } = history.location;
 		const URLsmilesHelp = 'https://www.smiles.com.br/fale-com-a-gente';
-		expect(pathname).toBe(URLsmilesHelp);
+		expect(helpText).toHaveAttribute('href', URLsmilesHelp);
 	});
 
 	test('if the link Cadastre-se redirect to sign up page', () => {
@@ -43,10 +41,8 @@ describe('Testing Header in route /nomade', () => {
 		const signUpText = getByText('Cadastre-se');
 		expect(signUpText).toBeInTheDocument();
 
-		userEvent.click(signUpText);
-		const { pathname } = history.location;
 		const URLsmilesSignUp = 'https://www.smiles.com.br/cadastro';
-		expect(pathname).toBe(URLsmilesSignUp);
+		expect(signUpText.href).toBe(URLsmilesSignUp);
 	});
 
 	test('if the button Entrar redirect to sign in page', () => {
@@ -55,12 +51,12 @@ describe('Testing Header in route /nomade', () => {
 		const nomade = '/nomade';
 		history.push(nomade);
 
-		const signInButton = getByRole('button', { name: 'sign-in' });
+		const signInButton = getByRole('button', { name: 'Entrar' });
 		expect(signInButton).toBeInTheDocument();
 
-		userEvent.click(signInButton);
+		fireEvent.click(signInButton);
 		const { pathname } = history.location;
-		const URLsmilesSignIn = 'https://login.smiles.com.br/login';
+		const URLsmilesSignIn = 'https://smiles.com.br/login';
 		expect(pathname).toBe(URLsmilesSignIn);
 	});
 });
@@ -72,13 +68,12 @@ describe('Testing Header in route /nomade/plan', () => {
 		const nomade = '/nomade/plan';
 		history.push(nomade);
 
-		const imgLogo = getByRole('image', { name: 'smiles-logo' });
+		const imgLogo = getByRole('img', { name: 'smiles-logo' });
 		expect(imgLogo).toBeInTheDocument();
 
-		userEvent.click(imgLogo);
-		const { pathname } = history.location;
+		const linkHome = getByRole('link', { name: 'smiles-logo' });
 		const URLsmilesHome = 'https://www.smiles.com.br/home';
-		expect(pathname).toBe(URLsmilesHome);
+		expect(linkHome.href).toBe(URLsmilesHome);
 	});
 	
 	test('if the link Ajuda redirect to help page', () => {
@@ -90,10 +85,8 @@ describe('Testing Header in route /nomade/plan', () => {
 		const helpText = getByText('Ajuda');
 		expect(helpText).toBeInTheDocument();
 
-		userEvent.click(helpText);
-		const { pathname } = history.location;
 		const URLsmilesHelp = 'https://www.smiles.com.br/fale-com-a-gente';
-		expect(pathname).toBe(URLsmilesHelp);
+		expect(helpText).toHaveAttribute('href', URLsmilesHelp);
 	});
 
 	test('if the link Cadastre-se redirect to sign up page', () => {
@@ -105,10 +98,8 @@ describe('Testing Header in route /nomade/plan', () => {
 		const signUpText = getByText('Cadastre-se');
 		expect(signUpText).toBeInTheDocument();
 
-		userEvent.click(signUpText);
-		const { pathname } = history.location;
 		const URLsmilesSignUp = 'https://www.smiles.com.br/cadastro';
-		expect(pathname).toBe(URLsmilesSignUp);
+		expect(signUpText.href).toBe(URLsmilesSignUp);
 	});
 
 	test('if the button Entrar redirect to sign in page', () => {
@@ -117,12 +108,12 @@ describe('Testing Header in route /nomade/plan', () => {
 		const nomade = '/nomade/plan';
 		history.push(nomade);
 
-		const signInButton = getByRole('button', { name: 'sign-in' });
+		const signInButton = getByRole('button', { name: 'Entrar' });
 		expect(signInButton).toBeInTheDocument();
 
 		userEvent.click(signInButton);
 		const { pathname } = history.location;
-		const URLsmilesSignIn = 'https://login.smiles.com.br/login';
+		const URLsmilesSignIn = 'https://smiles.com.br/login';
 		expect(pathname).toBe(URLsmilesSignIn);
 	});
 });
@@ -134,13 +125,12 @@ describe('Testing Header in route /nomade/forms', () => {
 		const nomade = '/nomade/forms';
 		history.push(nomade);
 
-		const imgLogo = getByRole('image', { name: 'smiles-logo' });
+		const imgLogo = getByRole('img', { name: 'smiles-logo' });
 		expect(imgLogo).toBeInTheDocument();
 
-		userEvent.click(imgLogo);
-		const { pathname } = history.location;
+		const linkHome = getByRole('link', { name: 'smiles-logo' });
 		const URLsmilesHome = 'https://www.smiles.com.br/home';
-		expect(pathname).toBe(URLsmilesHome);
+		expect(linkHome.href).toBe(URLsmilesHome);
 	});
 	
 	test('if the link Ajuda redirect to help page', () => {
@@ -152,10 +142,8 @@ describe('Testing Header in route /nomade/forms', () => {
 		const helpText = getByText('Ajuda');
 		expect(helpText).toBeInTheDocument();
 
-		userEvent.click(helpText);
-		const { pathname } = history.location;
 		const URLsmilesHelp = 'https://www.smiles.com.br/fale-com-a-gente';
-		expect(pathname).toBe(URLsmilesHelp);
+		expect(helpText).toHaveAttribute('href', URLsmilesHelp);
 	});
 
 	test('if the link Cadastre-se redirect to sign up page', () => {
@@ -167,10 +155,8 @@ describe('Testing Header in route /nomade/forms', () => {
 		const signUpText = getByText('Cadastre-se');
 		expect(signUpText).toBeInTheDocument();
 
-		userEvent.click(signUpText);
-		const { pathname } = history.location;
 		const URLsmilesSignUp = 'https://www.smiles.com.br/cadastro';
-		expect(pathname).toBe(URLsmilesSignUp);
+		expect(signUpText.href).toBe(URLsmilesSignUp);
 	});
 
 	test('if the button Entrar redirect to sign in page', () => {
@@ -179,12 +165,12 @@ describe('Testing Header in route /nomade/forms', () => {
 		const nomade = '/nomade/forms';
 		history.push(nomade);
 
-		const signInButton = getByRole('button', { name: 'sign-in' });
+		const signInButton = getByRole('button', { name: 'Entrar' });
 		expect(signInButton).toBeInTheDocument();
 
 		userEvent.click(signInButton);
 		const { pathname } = history.location;
-		const URLsmilesSignIn = 'https://login.smiles.com.br/login';
+		const URLsmilesSignIn = 'https://smiles.com.br/login';
 		expect(pathname).toBe(URLsmilesSignIn);
 	});
 });

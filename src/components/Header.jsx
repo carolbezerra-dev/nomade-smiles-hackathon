@@ -1,21 +1,19 @@
 import React from 'react';
+import headerURLs from '../URLs';
 import SmilesLogo from '../images/header/smiles-logo.svg';
+import '../css/header.css';
 
 function Header() {
-  const URLsmilesHome = 'https://www.smiles.com.br/home';
-  const URLsmilesHelp = 'https://www.smiles.com.br/fale-com-a-gente';
-  const URLsmilesSignUp = 'https://www.smiles.com.br/cadastro';
-  const URLsmilesSignIn = 'https://smiles.com.br/login';
-
+  const { toSmilesHome, toSmilesHelp, toSmilesSignUp, toSmilesSignIn } = headerURLs;
   return (
-    <header>
-      <nav>
-        <a href={ URLsmilesHome }>
+    <header class='main-container'>
+      <nav cl>
+        <a href={ toSmilesHome }>
           <img alt='smiles-logo' src={ SmilesLogo } />
         </a>
-        <a href={ URLsmilesHelp }>Ajuda</a>
-        <a href={ URLsmilesSignUp }>Cadastre-se</a>
-        <button type='button' onClick={ () => window.location.href = URLsmilesSignIn }>
+        <a href={ toSmilesHelp }>Ajuda</a>
+        <a href={ toSmilesSignUp }>Cadastre-se</a>
+        <button type='button' onClick={ () => window.location.href = toSmilesSignIn }>
           Entrar
         </button>
       </nav>
