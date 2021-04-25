@@ -6,16 +6,24 @@ import '../css/header.css';
 function Header() {
   const { toSmilesHome, toSmilesHelp, toSmilesSignUp, toSmilesSignIn } = headerURLs;
   return (
-    <header class='main-container'>
-      <nav cl>
-        <a href={ toSmilesHome }>
-          <img alt='smiles-logo' src={ SmilesLogo } />
-        </a>
-        <a href={ toSmilesHelp }>Ajuda</a>
-        <a href={ toSmilesSignUp }>Cadastre-se</a>
-        <button type='button' onClick={ () => window.location.href = toSmilesSignIn }>
-          Entrar
-        </button>
+    <header className='main-container'>
+      <nav className='nav-container'>
+        <div>
+          <a href={ toSmilesHome } className='logo-link'>
+            <img alt='smiles-logo' src={ SmilesLogo } className='logo-img' />
+          </a>
+        </div>
+        <div className='right-div-links'>
+          <a href={ toSmilesHelp } className='help-link'>Ajuda</a>
+          <a href={ toSmilesSignUp } className='signup-link'>Cadastre-se</a>
+          <button
+            type='button'
+            onClick={ () => window.location.href = toSmilesSignIn }
+            className='signin-link'
+          >
+            Entrar
+          </button>
+        </div>
       </nav>
     </header>
   );

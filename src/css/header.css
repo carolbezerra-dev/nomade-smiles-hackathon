@@ -1,0 +1,19 @@
+.main-container {
+  background-color: #FF5A00;
+};
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-img {
+  margin: 1vw;
+  width: 80%;
+};
+
+.right-div-links {
+  display: flex;
+  align-items: center;
+}
+
