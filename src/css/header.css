@@ -1,6 +1,6 @@
 .main-container {
   background-color: #FF5A00;
-};
+}
 
 .nav-container {
   display: flex;
@@ -10,10 +10,22 @@
 .logo-img {
   margin: 1vw;
   width: 80%;
-};
-
-.right-div-links {
-  display: flex;
-  align-items: center;
 }
 
+.right-div-links {
+  align-items: center;
+  display: flex;
+}
+
+.help-link {
+  text-decoration: none;
+}
+
+.signup-link {
+  margin-left: 1vw;
+  text-decoration: none;
+}
+
+.signin-link {
+  margin: 0 1vw;
+}
