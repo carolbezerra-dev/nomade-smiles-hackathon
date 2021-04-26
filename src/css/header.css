@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+.main-container {
+  background-color: #FF5A00;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-img {
+  margin: 1vh;
+  width: 60%;
+}
+
+.right-div-links {
+  align-items: center;
+  display: flex;
+}
+
+.help-link {
+  color: #FFFFFF;
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+}
+
+.signup-link {
+  color: #FFFFFF;
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+}
+
+.signin-link {
+  background-color: #FF5A00;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+}
+
+/* Moto G4 360 x 640 */
+@media (min-width:360px) and (orientation: portrait) {
+  .logo-img {
+    width: 60%;
+  }
+
+  .help-link {
+    font-size: 3.4vw;
+  }
+
+  .signup-link {
+    font-size: 3.4vw;
+    margin-left: 4vw;
+  }
+
+  .signin-link {
+    border-radius: 2vw;
+    font-size: 3.1vw;
+    margin: 0 4vw;
+    padding: 1vw 4vw;
+  }
+}
+
+/* iPad landscape 1024 x 768 */
+@media (min-width: 1024px) {
+  .logo-img {
+    width: 100%;
+  }
+
+  .help-link {
+    font-size: 2.5vw;
+  }
+
+  .signup-link {
+    font-size: 2.5vw;
+    margin-left: 3vw;
+  }
+
+  .signin-link {
+    border-radius: 1.4vw;
+    font-size: 2.4vw;
+    margin: 0 3vw;
+    padding: 0.5vw 4vw;
+  }
+}
+
+/* Monitor 1920 x 1080 */
+@media (min-width: 1920px) {
+  .logo-img {
+    width: 110%;
+  }
+  
+  .help-link {
+    font-size: 1.3vw;
+  }
+
+  .signup-link {
+    font-size: 1.3vw;
+    margin-left: 2vw;
+  }
+
+  .signin-link {
+    border-radius: 0.7vw;
+    font-size: 1.3vw;
+    margin: 0 2vw;
+    padding: 0.3vw 3vw;
+  }
+}
