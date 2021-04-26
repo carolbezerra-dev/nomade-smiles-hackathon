@@ -1,6 +1,4 @@
 import React from 'react';
-import { fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import renderWithRouter from './renderWithRouter';
 import App from '../App';
 
@@ -45,19 +43,17 @@ describe('Testing Header in route /nomade', () => {
 		expect(signUpText.href).toBe(URLsmilesSignUp);
 	});
 
-	test('if the button Entrar redirect to sign in page', () => {
+	test('if the button Entrar redirect to sign in page', async () => {
 		const { history, getByRole } = renderWithRouter(<App />);
 		
 		const nomade = '/nomade';
 		history.push(nomade);
 
-		const signInButton = getByRole('button', { name: 'Entrar' });
+		const signInButton = getByRole('link', { name: 'Entrar' });
 		expect(signInButton).toBeInTheDocument();
 
-		fireEvent.click(signInButton);
-		const { pathname } = history.location;
 		const URLsmilesSignIn = 'https://smiles.com.br/login';
-		expect(pathname).toBe(URLsmilesSignIn);
+		expect(signInButton).toHaveAttribute('href', URLsmilesSignIn);
 	});
 });
 
@@ -108,13 +104,11 @@ describe('Testing Header in route /nomade/plan', () => {
 		const nomade = '/nomade/plan';
 		history.push(nomade);
 
-		const signInButton = getByRole('button', { name: 'Entrar' });
+		const signInButton = getByRole('link', { name: 'Entrar' });
 		expect(signInButton).toBeInTheDocument();
 
-		userEvent.click(signInButton);
-		const { pathname } = history.location;
 		const URLsmilesSignIn = 'https://smiles.com.br/login';
-		expect(pathname).toBe(URLsmilesSignIn);
+		expect(signInButton).toHaveAttribute('href', URLsmilesSignIn);
 	});
 });
 
@@ -165,12 +159,10 @@ describe('Testing Header in route /nomade/forms', () => {
 		const nomade = '/nomade/forms';
 		history.push(nomade);
 
-		const signInButton = getByRole('button', { name: 'Entrar' });
+		const signInButton = getByRole('link', { name: 'Entrar' });
 		expect(signInButton).toBeInTheDocument();
 
-		userEvent.click(signInButton);
-		const { pathname } = history.location;
 		const URLsmilesSignIn = 'https://smiles.com.br/login';
-		expect(pathname).toBe(URLsmilesSignIn);
+		expect(signInButton).toHaveAttribute('href', URLsmilesSignIn);
 	});
 });

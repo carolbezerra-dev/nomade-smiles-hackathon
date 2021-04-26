@@ -36,6 +36,7 @@
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
   font-family: 'Nunito', sans-serif;
+  text-decoration: none;
 }
 
 /* Moto G4 360 x 640 */
@@ -54,7 +55,7 @@
   }
 
   .signin-link {
-    border-radius: 1.8vw;
+    border-radius: 2vw;
     font-size: 3.1vw;
     margin: 0 4vw;
     padding: 1vw 4vw;
@@ -77,26 +78,32 @@
   }
 
   .signin-link {
-    border-radius: 1vw;
-    font-size: 2.3vw;
+    border-radius: 1.4vw;
+    font-size: 2.4vw;
     margin: 0 3vw;
     padding: 0.5vw 4vw;
   }
 }
 
-/* Laptop with HiDPI screen 1440 x 900 */
-@media (min-width: 1440px) {
+/* Monitor 1920 x 1080 */
+@media (min-width: 1920px) {
+  .logo-img {
+    width: 110%;
+  }
+  
   .help-link {
-    font-size: 2.3vw;
+    font-size: 1.3vw;
   }
 
   .signup-link {
-    font-size: 2.3vw;
-    margin-left: 2.5vw;
+    font-size: 1.3vw;
+    margin-left: 2vw;
   }
 
   .signin-link {
-    font-size: 2vw;
-    margin: 0 2.5vw;
+    border-radius: 0.7vw;
+    font-size: 1.3vw;
+    margin: 0 2vw;
+    padding: 0.3vw 3vw;
   }
 }

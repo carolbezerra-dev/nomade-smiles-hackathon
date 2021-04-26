@@ -16,13 +16,7 @@ function Header() {
         <div className='right-div-links'>
           <a href={ toSmilesHelp } className='help-link'>Ajuda</a>
           <a href={ toSmilesSignUp } className='signup-link'>Cadastre-se</a>
-          <button
-            type='button'
-            onClick={ () => window.location.href = toSmilesSignIn }
-            className='signin-link'
-          >
-            Entrar
-          </button>
+          <a href={ toSmilesSignIn } className='signin-link'>Entrar</a>
         </div>
       </nav>
     </header>
